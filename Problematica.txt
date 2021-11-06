@@ -1,0 +1,6 @@
+Aréa de enfoque: salud
+
+Problemas detectados:
+Salas de urgencias
+Errores humanos de tipografía que dificultan el procesamiento y comprensión de sintomas
+Automatizar una sugerencia de diagnostico presuntivo según los síntomas registrados
