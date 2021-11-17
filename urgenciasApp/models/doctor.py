@@ -26,7 +26,8 @@ class UserManager(BaseUserManager):
 
 class Doctor(AbstractBaseUser, PermissionsMixin):
     id = models.BigAutoField(primary_key=True)
-    cedula = models.CharField()
+    username=models.CharField('Username', max_length=30, unique=True)
+    cedula = models.CharField(max_length=30)
     password = models.CharField('Password', max_length=256)
     nombre = models.CharField('Nombre', max_length=30)
     correo = models.EmailField('Correo', max_length=50)

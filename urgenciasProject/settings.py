@@ -47,7 +47,7 @@ SIMPLE_JWT = {
     'UPDATE_LAST_LOGIN': False,
     'ALGORITHM': 'HS256',
     'USER_ID_FIELD': 'id',
-    'USER_ID_CLAIM': 'user_id',
+    'USER_ID_CLAIM': 'doctor_id',
 }
 
 MIDDLEWARE = [
@@ -69,7 +69,7 @@ REST_FRAMEWORK = {
     )
 }
 
-AUTH_USER_MODEL = 'urgenciasApp.User'
+AUTH_USER_MODEL = 'urgenciasApp.doctor'
 
 ROOT_URLCONF = 'urgenciasProject.urls'
 
@@ -98,10 +98,10 @@ WSGI_APPLICATION = 'urgenciasProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
+        'NAME': 'd32jhar37rv7rb',
+        'USER': 'sogpnefvnyahpj',
+        'PASSWORD': 'f451c75932339a5f44fbbe94db27bdfda9fd52d3d24b38f62b3bd97a631e485a',
+        'HOST': 'ec2-54-158-247-97.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }

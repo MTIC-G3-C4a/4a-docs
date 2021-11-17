@@ -19,7 +19,7 @@ class VerifyTokenView(TokenVerifyView):
             serializer.is_valid(raise_exception=True)
             token_data = tokenBackend.decode(
                 request.data['token'], verify=False)
-            serializer.validated_data['UserId'] = token_data['user_id']
+            serializer.validated_data['UserId'] = token_data['doctor_id']
 
         except TokenError as e:
             raise InvalidToken(e.args[0])
