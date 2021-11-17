@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 from django.contrib.auth.hashers import make_password
 
+
 class UserManager(BaseUserManager):
     def create_user(self, username, password=None):
 
@@ -22,19 +23,19 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
+
 class Doctor(AbstractBaseUser, PermissionsMixin):
     id = models.BigAutoField(primary_key=True)
-    cedula = models.IntegerField()
-    password = models.CharField('Password', max_length = 256)
-    nombre = models.CharField('Nombre', max_length = 30)
-    correo = models.EmailField('Correo', max_length = 50)
-    especialidad = models.CharField('Especialidad', max_length = 50)
-
+    cedula = models.CharField()
+    password = models.CharField('Password', max_length=256)
+    nombre = models.CharField('Nombre', max_length=30)
+    correo = models.EmailField('Correo', max_length=50)
+    especialidad = models.CharField('Especialidad', max_length=50)
 
     def save(self, **kwargs):
         some_salt = 'mMUj0DrIK6vgtdIYepkIxN'
         self.password = make_password(self.password, some_salt)
         super().save(**kwargs)
-    
+
     objects = UserManager()
     USERNAME_FIELD = 'username'
